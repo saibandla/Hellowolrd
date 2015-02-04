@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".StatusActivity">
+
+    <item android:id="@+id/action_start_service" android:title="@string/start_service"/>
+    <item android:id="@+id/action_stop_service" android:title="@string/stop_service"/>
+    <item android:id="@+id/action_refresh_service" android:title="@string/refresh_service"/>
+    <item android:id="@+id/action_prefs_activity" android:title="@string/prefs"/>
+    <item android:id="@+id/action_status_update" android:title="@string/status_update"/>
+</menu>
