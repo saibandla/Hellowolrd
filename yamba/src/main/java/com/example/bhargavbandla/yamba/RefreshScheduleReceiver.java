@@ -12,7 +12,7 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 /**
  * Created by BhargavBandla on 25/01/15.
  */
-public class BootReceiver extends BroadcastReceiver {
+public class RefreshScheduleReceiver extends BroadcastReceiver {
     static PendingIntent lastop;
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -23,10 +23,10 @@ public class BootReceiver extends BroadcastReceiver {
         alarmManager.cancel(lastop);
         if(intervel>0) {
             alarmManager.setInexactRepeating(AlarmManager.RTC, System.currentTimeMillis(), intervel, operation);
-            Log.d("BootReceiver","on Recieve: delay:"+intervel);
+            Log.d("RefreshScheduleReceiver", "on Recieve: delay:" + intervel);
         }
         lastop=operation;
 //        context.startService(new Intent(context,UpdaterService.class));
-        Log.d("BootReceiver", "onReceive");
+        Log.d("RefreshScheduleReceiver", "onReceive");
     }
 }
