@@ -1,24 +1,18 @@
 package com.example.bhargavbandla.yamba;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Debug;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import winterwell.jtwitter.Twitter;
 import winterwell.jtwitter.TwitterException;
 
 
-public class StatusActivity extends ActionBarActivity {
+public class StatusActivity extends Activity {
     Button buttonUpdate;
     EditText editTextStatus;
     static final String TAG = "StatusActivity";
@@ -47,13 +41,12 @@ public class StatusActivity extends ActionBarActivity {
     }
 
 
-
     class PostToTwitter extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             try {
 
-                ((YambaApp)getApplication()).getTwitter().setStatus(params[0]);
+                ((YambaApp) getApplication()).getTwitter().setStatus(params[0]);
                 return "Successfully Posted " + params[0];
             } catch (TwitterException e) {
                 e.printStackTrace();

@@ -8,9 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import winterwell.jtwitter.Twitter;
 
 /**
@@ -47,11 +44,10 @@ public class StatusData {
 
     public Cursor query()
     {
-        List<Twitter.Status> list=new ArrayList<Twitter.Status>();
-        db=dbHelper.getReadableDatabase();
-        Cursor cursor=db.query(TABLE_NAME, null, null, null, null, null, C_CREATED_AT + " DESC");
 
-        return cursor;
+        db=dbHelper.getReadableDatabase();
+
+        return db.query(TABLE_NAME, null, null, null, null, null, C_CREATED_AT + " DESC");
     }
     class DBHelper extends SQLiteOpenHelper {
 
