@@ -10,7 +10,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/fragmentBasics" />
+            <option value="$PROJECT_DIR$/fragmentBasics2" />
             <option value="$PROJECT_DIR$/myapplication" />
+            <option value="$PROJECT_DIR$/myapplication2" />
+            <option value="$PROJECT_DIR$/myapplication3" />
             <option value="$PROJECT_DIR$/yamba" />
           </set>
         </option>

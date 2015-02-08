@@ -3,6 +3,7 @@
     package="com.example.bhargavbandla.yamba">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="com.example.bhargavbandla.yamba.premission.Refresh" />
@@ -50,12 +51,15 @@
             </intent-filter>
         </service>
 
-        <receiver android:name=".BootReceiver">
+        <receiver android:name=".RefreshScheduleReceiver">
             <intent-filter>
                 <action android:name="com.yamba.Test" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        <provider
+            android:authorities="com.example.bhargavbandla.yamba.provider"
+            android:name=".StatusProvider" />
     </application>
 
 </manifest>

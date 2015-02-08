@@ -14,19 +14,18 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
  */
 public class RefreshScheduleReceiver extends BroadcastReceiver {
     static PendingIntent lastop;
+
     @Override
     public void onReceive(Context context, Intent intent) {
-
         long intervel = Long.parseLong(getDefaultSharedPreferences(context).getString("delay", "15"));
         PendingIntent operation = PendingIntent.getService(context, -1, new Intent(YambaApp.ACTION_REFRESH_SERVICE), PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(lastop);
-        if(intervel>0) {
+        if (intervel > 0) {
             alarmManager.setInexactRepeating(AlarmManager.RTC, System.currentTimeMillis(), intervel, operation);
             Log.d("RefreshScheduleReceiver", "on Recieve: delay:" + intervel);
         }
-        lastop=operation;
-//        context.startService(new Intent(context,UpdaterService.class));
+        lastop = operation;
         Log.d("RefreshScheduleReceiver", "onReceive");
     }
 }

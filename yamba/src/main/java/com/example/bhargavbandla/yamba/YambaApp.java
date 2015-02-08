@@ -17,7 +17,7 @@ import winterwell.jtwitter.TwitterException;
 public class YambaApp extends Application implements SharedPreferences.OnSharedPreferenceChangeListener {
     private Twitter twitter;
     SharedPreferences prefs;
-    public StatusData statusData;
+
     public static final String ACTION_NEW_STATUS = "com.example.bhargavbandla.yamba.NEW_STATUS";
     public static final String ACTION_REFRESH_SERVICE = "com.example.bhargavbandla.yamba.RefreshServic";
     static final String TAG = "YambaApp";
@@ -28,7 +28,7 @@ public class YambaApp extends Application implements SharedPreferences.OnSharedP
         //Preferences Stuff
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.registerOnSharedPreferenceChangeListener(this);
-        statusData = new StatusData(this);
+
 
         Log.d(TAG, "onCreateApplicationObject");
     }
@@ -63,7 +63,7 @@ public class YambaApp extends Application implements SharedPreferences.OnSharedP
         try {
             List<Twitter.Status> status = getTwitter().getPublicTimeline();
             for (Twitter.Status status1 : status) {
-                statusData.insert(status1);
+                getContentResolver().insert(StatusProvider.CONTENT_URI, StatusProvider.statusToValues(status1));
                 if (status1.createdAt.getTime() > this.lastTimeStampseen) {
                     count++;
                     Log.d(TAG, String.format("%s : %s", status1.user.name, status1.text));

@@ -30,8 +30,6 @@ public class UpdaterService extends Service {
                 try {
                     while (flag) {
                         ((YambaApp) getApplication()).pullAndInsert();
-
-
                         int delay = Integer.parseInt(((YambaApp) getApplication()).prefs.getString("delay", "30"));
                         Thread.sleep(delay * 1000);
                     }

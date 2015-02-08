@@ -8,11 +8,11 @@ import android.preference.PreferenceActivity;
  */
 @SuppressWarnings("ALL")
 public class PrefsActivity extends PreferenceActivity {
-    static  final String TAG="PrefsActivity";
+    static final String TAG = "PrefsActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.prefs);
     }
 }

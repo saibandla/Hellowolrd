@@ -4,7 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Hellowolrd.iml" filepath="$PROJECT_DIR$/Hellowolrd.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentBasics/fragmentBasics.iml" filepath="$PROJECT_DIR$/fragmentBasics/fragmentBasics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentBasics2/fragmentBasics2.iml" filepath="$PROJECT_DIR$/fragmentBasics2/fragmentBasics2.iml" />
       <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication2/myapplication2.iml" filepath="$PROJECT_DIR$/myapplication2/myapplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication3/myapplication3.iml" filepath="$PROJECT_DIR$/myapplication3/myapplication3.iml" />
       <module fileurl="file://$PROJECT_DIR$/yamba/yamba.iml" filepath="$PROJECT_DIR$/yamba/yamba.iml" />
     </modules>
   </component>

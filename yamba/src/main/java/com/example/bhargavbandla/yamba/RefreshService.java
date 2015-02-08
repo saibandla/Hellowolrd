@@ -22,17 +22,12 @@ public class RefreshService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-
-
         ((YambaApp) getApplication()).pullAndInsert();
-//            sendBroadcast(new Intent(YambaApp.ACTION_NEW_STATUS));
         Log.d(TAG, "onHandleIntent");
-
     }
 
     public void onDestroy() {
         super.onDestroy();
-
         Log.d(TAG, "onDestroy");
     }
 }

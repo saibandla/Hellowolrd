@@ -1,1 +1,3 @@
-include ':app', ':myapplication', ':yamba'
+include ':app', ':myapplication', ':yamba', ':myapplication2', ':myapplication3'
+include ':fragmentBasics'
+include ':fragmentBasics2'
